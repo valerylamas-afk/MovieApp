@@ -17,11 +17,32 @@ import edu.ucb.pablostify.userinformation.domain.repository.GithubRepository
 import org.koin.dsl.module
 
 val dataModule = module {
-    single<LoginRepository> { LoginRepositoryImpl() }
-    single<RegisterRepository> { RegisterRepositoryImpl() }
-    single<MovieRepository> { MovieRepositoryImpl() }
-    single<MovieDetailRepository> { MovieDetailRepositoryImpl() }
-    single<ProfileRepository> { ProfileRepositoryImpl() }
-    single<GithubRemoteDataSource> { GitHubApiService() }
-    single<GithubRepository> { GithubRepositoryImpl(get()) }
+
+    single<LoginRepository> {
+        LoginRepositoryImpl()
+    }
+
+    single<RegisterRepository> {
+        RegisterRepositoryImpl()
+    }
+
+    single<MovieRepository> {
+        MovieRepositoryImpl()
+    }
+
+    single<MovieDetailRepository> {
+        MovieDetailRepositoryImpl()
+    }
+
+    single<ProfileRepository> {
+        ProfileRepositoryImpl()
+    }
+
+    single<GithubRemoteDataSource> {
+        GitHubApiService()
+    }
+
+    single<GithubRepository> {
+        GithubRepositoryImpl(get())
+    }
 }
