@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1085318601203",
+    "project_id": "pablostify-eba4c",
+    "storage_bucket": "pablostify-eba4c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085318601203:android:cbcdaa2dd39d18e3321a86",
+        "android_client_info": {
+          "package_name": "edu.ucb.pablostify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8K0UtrUmPEtX4N54GHyfhnZMtckxpJDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

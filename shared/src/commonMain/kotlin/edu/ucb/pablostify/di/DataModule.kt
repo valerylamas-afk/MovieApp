@@ -1,5 +1,7 @@
 package edu.ucb.pablostify.di
 
+import edu.ucb.pablostify.database.AppDatabase
+import edu.ucb.pablostify.database.TodoDao
 import edu.ucb.pablostify.login.data.LoginRepositoryImpl
 import edu.ucb.pablostify.login.domain.repository.LoginRepository
 import edu.ucb.pablostify.moviedetail.data.MovieDetailRepositoryImpl
@@ -15,6 +17,7 @@ import edu.ucb.pablostify.userinformation.data.repository.GithubRepositoryImpl
 import edu.ucb.pablostify.userinformation.data.service.GitHubApiService
 import edu.ucb.pablostify.userinformation.domain.repository.GithubRepository
 import org.koin.dsl.module
+
 
 val dataModule = module {
 
@@ -44,5 +47,9 @@ val dataModule = module {
 
     single<GithubRepository> {
         GithubRepositoryImpl(get())
+    }
+
+    single<TodoDao> {
+        get<AppDatabase>().getDao()
     }
 }

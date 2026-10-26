@@ -24,6 +24,7 @@ import edu.ucb.pablostify.login.presentation.viewmodel.LoginEvents
 import edu.ucb.pablostify.login.presentation.viewmodel.LoginViewModel
 import edu.ucb.pablostify.navigation.NavRoute
 import org.koin.compose.viewmodel.koinViewModel
+import org.example.project.components.buttons.PrimaryButton
 
 @Composable
 fun LoginScreen(
@@ -65,13 +66,12 @@ fun LoginScreen(
             modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
         )
         state.errorMessage?.let { Text(it, modifier = Modifier.padding(top = 8.dp)) }
-        Button(
-            onClick = { viewModel.emitEvent(LoginEvents.OnSubmit) },
-            enabled = !state.isLoading,
-            modifier = Modifier.fillMaxWidth().padding(top = 16.dp)
-        ) {
-            if (state.isLoading) CircularProgressIndicator() else Text("Ingresar")
-        }
+        PrimaryButton(
+            text = if (state.isLoading) "Cargando..." else "Ingresar",
+            onClick = {
+                viewModel.emitEvent(LoginEvents.OnSubmit)
+            }
+        )
         TextButton(onClick = { viewModel.emitEvent(LoginEvents.OnRegister) }) {
             Text("Crear cuenta")
         }
